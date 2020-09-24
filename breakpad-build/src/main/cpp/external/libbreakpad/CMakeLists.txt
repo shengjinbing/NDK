@@ -4,7 +4,7 @@ set(BREAKPAD_ROOT ${CMAKE_CURRENT_SOURCE_DIR})
 
 include_directories(${BREAKPAD_ROOT}/src ${BREAKPAD_ROOT}/src/common/android/include)
 
-
+# 如果文件太多，可以批量加载，下面时将 cpp 文件夹下所有的源文件定义成了 SOURCE（后面的源文件使用相对路径）
 file(GLOB BREAKPAD_SOURCES_COMMON
         ${BREAKPAD_ROOT}/src/client/linux/crash_generation/crash_generation_client.cc
         ${BREAKPAD_ROOT}/src/client/linux/dump_writer_common/thread_info.cc

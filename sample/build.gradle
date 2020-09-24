@@ -12,6 +12,7 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        //设置编译版本
         externalNativeBuild {
             cmake {
                 cppFlags "-std=c++11"

@@ -23,6 +23,7 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+    // 设置配置文件路径
     externalNativeBuild {
         cmake {
             path "src/main/cpp/CMakeLists.txt"

@@ -6,6 +6,7 @@ import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.os.Environment;
 import android.view.View;
+import android.widget.Toast;
 
 import com.sample.breakpad.BreakpadInit;
 
@@ -51,6 +52,17 @@ public class MainActivity extends Activity {
                                 // copy core dump to sdcard
                             }
                         });
+
+        findViewById(R.id.dynamic_btn)
+                .setOnClickListener(
+                        new View.OnClickListener() {
+                            @Override
+                            public void onClick(View view) {
+                                /*Toast.makeText(getApplicationContext(),
+                                        dynamicJavaFunc(77)+""
+                                ,Toast.LENGTH_LONG).show();*/
+                            }
+                        });
     }
 
     /**
@@ -81,5 +93,20 @@ public class MainActivity extends Activity {
         }
     }
 
+
+
+    /*********************************************************************************/
+
+
+    /**
+     *  1、JNI 与 NDK 区别
+     *  JNI：JNI是一套编程接口，用来实现Java代码与本地的C/C++代码进行交互；
+     *  NDK: NDK是Google开发的一套开发和编译工具集，可以生成动态链接库，主要用于Android的JNI开发
+     *
+     */
+
+    //静态注册
     public native void crash();
+
+    //public native int dynamicJavaFunc(int i);
 }
